@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            background: black;
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        .star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: white;
+            animation: fade 1s infinite alternate;
+        }
+
+        @keyframes fade {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        /* Apply the fade-in animation to the text */
+        p {
+            animation: fadeIn 4s;
+        }
+
+        a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #ddd;
+        }
+        /* Style for the name text */
+        .name-text {
+            position: absolute;
+            top: 10px; /* Adjust as needed */
+            right: 10px; /* Adjust as needed */
+            color: white;
+            font-size: 20px; /* Adjust as needed */
+        }
+    </style>
+</head>
+<body>
+    <p class="name-text">James Henry </p>
+    <div id="stars"></div>
+    <p>Select your device: <a href="https://j3meshenry.github.io/jamesitemobile/JameSite.html">Mobile</a> | <a href="https://j3meshenry.github.io/jameshenrysite/JameSite.html">Desktop</a></p>
+
+    <script>
+        for (let i = 0; i < 100; i++) {
+            let star = document.createElement('div');
+            star.className = 'star';
+            star.style.top = Math.random() * window.innerHeight + 'px';
+            star.style.left = Math.random() * window.innerWidth + 'px';
+            star.style.animationDuration = Math.random() * 3 + 's'; // random animation duration between 0 and 3 seconds
+            document.getElementById('stars').appendChild(star);
+        }
+    </script>
+</body>
+</html>
